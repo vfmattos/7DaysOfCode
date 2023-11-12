@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+</head>
+<body>
+    <label>Qual seu nome? <input type="text" name="nome" id="nome" placeholder="Digite seu nome"></label><br>
+    <label>Quantos anos você tem? <input type="number" name="idade" id="idade" placeholder="Digite sua idade"></label><br>
+    <label>Qual linguagem de programação você está estudando? <input type="text" name="linguagem" id="linguagem" placeholder="Digite a linguagem"></label><br>
+
+    <button onclick="enviaRespostas()">Enviar</button>
+
+    <p id="respostas"></p>
+
+
+    <script>
+
+        function enviaRespostas() {
+
+            var nome = document.getElementById("nome").value;
+            var idade = document.getElementById("idade").value;
+            var linguagem = document.getElementById("linguagem").value;
+
+            const respostas = document.getElementById('respostas');
+
+            respostas.innerHTML = `Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}!`;
+
+        }
+
+
+    </script>
+
+</body>
+</html>
