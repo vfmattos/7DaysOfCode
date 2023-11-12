@@ -38,3 +38,4 @@ C:\Users\vitor\Desktop\Projetos\7DaysCode\C#\PokeAPI\PokeAPI\obj\Debug\net6.0\re
 C:\Users\vitor\Desktop\Projetos\7DaysCode\C#\PokeAPI\PokeAPI\obj\Debug\net6.0\PokeAPI.pdb
 C:\Users\vitor\Desktop\Projetos\7DaysCode\C#\PokeAPI\PokeAPI\obj\Debug\net6.0\PokeAPI.genruntimeconfig.cache
 C:\Users\vitor\Desktop\Projetos\7DaysCode\C#\PokeAPI\PokeAPI\obj\Debug\net6.0\ref\PokeAPI.dll
+C:\Users\vitor\Desktop\Projetos\7DaysCode\C#\PokeAPI\PokeAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
