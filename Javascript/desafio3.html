@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+</head>
+<body>
+    
+    <script>
+
+
+        var area = prompt("Para qual área deseja seguir? 1- Front-End / 2- Back-End");
+
+        if(area == "1") {
+            let framework = prompt("Quer aprender React ou Vue?");
+            console.log(`Bacana! o ${framework} é um framework poderoso!`);
+        }
+        else if(area == "2") {
+            let linguagem = prompt("Quer aprender C# ou Java?");
+            console.log(`Bacana! ${linguagem} é uma linguagem de programação muito eficiente!`);
+        }
+
+        else{
+            alert("Valor inválido!")
+        }
+
+        var especializacao = prompt(`1- Continuar se especializando em ${area} ou 2- Tornar-se Fullstack?`);
+
+        if(especializacao == 1){
+            console.log("Vá em frente e continue se esforçando!");
+        }
+
+        else if(especializacao == 2){
+            console.log("Dê uma olhada nas demais tecnologias para tornar-se um grande desenvolvedor Fullstack!");
+        }
+        else{
+            alert("Valor inválido!");
+        }
+
+        var escolha = "";
+        
+        while(escolha != 2){
+            let tecnologia = prompt("Quais são as tecnologias que deseja se especializar?");
+            console.log(`Boa sorte nos seus estudos de ${tecnologia}!`);
+            escolha = prompt("Tem mais alguma tecnologias que deseja se especializar? 1- Sim / 2- Não")
+        }
+
+        console.log("Foi um prazer interagir com você!");
+
+    </script>
+
+</body>
+</html>
