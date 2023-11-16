@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 4</title>
+</head>
+<body>
+
+    <input type="number" id="numeroEscolhido" placeholder="Digite um numero de 0 a 10" style="width: 180px;">
+    <button onclick="validaResposta()">Adivinhar</button>
+
+    <script>
+
+        var numeroCorreto = Math.floor(Math.random() * (10 - 0 + 1) + 0);
+        var tentativas = 3;
+
+        function validaResposta(){
+            
+            var escolha = document.querySelector("#numeroEscolhido").value;
+
+                if(escolha == numeroCorreto) {
+                    alert("Parabéns, você acertou!");
+                    tentativas = 3;
+                }
+                else{
+                    tentativas--;
+                    if(tentativas == 0){
+                        alert(`Fim de jogo! O número correto é: ${numeroCorreto}!`); 
+                        tentativas = 3;
+                    }
+                    else{
+                        alert(`Você errou! Tentativas restantes: ${tentativas}`);
+                    }
+                }
+
+            }
+           
+        
+
+    </script>
+    
+</body>
+</html>
