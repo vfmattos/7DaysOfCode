@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 6</title>
+</head>
+<body>
+
+    <ul id="listaDeCompras"></ul>
+    
+    <script>
+        
+        const listaDeCompras = document.getElementById("listaDeCompras");
+
+        const frutas = [];
+        const laticinios = [];
+        const congelados = [];
+        const doces = [];
+
+        var allAliments = [frutas, laticinios, congelados, doces];
+
+        var escolha = "";
+
+        while(escolha != "4"){
+            escolha = prompt("1 - adicionar um alimento / 2 - ver lista de alimentos / 3 - remover um alimento / 4 - sair");
+
+            if(escolha == "1"){
+                var alimento = prompt("Qual alimento deseja inserir?");
+                var categoria = prompt("Qual a categoria do alimento? fruta, laticinio, congelado ou doce?");
+
+                switch(categoria) {
+                    case "fruta":
+                        frutas.push(alimento);
+                        break;
+                    case "laticinio":
+                        laticinios.push(alimento);
+                        break;
+                    case "congelado":
+                        congelados.push(alimento);
+                        break;
+                    case "doce":
+                        doces.push(alimento);
+                        break;
+                    default:
+                        alert("Escolha inválida!");
+
+                }
+
+            }
+
+            else if (escolha == "2"){
+
+                alert(exibeAlimentos(allAliments));
+            }
+
+            else if(escolha == "3"){
+                var remover = prompt(`Frutas: ${frutas}\n Laticínios: ${laticinios}\n Congelados: ${congelados}\n Doces: ${doces}\n Qual produto você deseja remover?`);
+
+                if(frutas.indexOf(remover) != -1){
+                    frutas.splice(frutas.indexOf(remover), 1);
+                    alert("Produto removido com sucesso!");
+                }else if(laticinios.indexOf(remover) != -1){
+                    laticinios.splice(laticinios.indexOf(remover), 1);
+                    alert("Produto removido com sucesso!");
+                }else if(congelados.indexOf(remover) != -1){
+                    congelados.splice(congelados.indexOf(remover), 1);
+                    alert("Produto removido com sucesso!");
+                }else if(doces.indexOf(remover) != -1){
+                    doces.splice(doces.indexOf(remover), 1);
+                    alert("Produto removido com sucesso!");
+                }else{
+                    alert("Produto não encontrado");
+                }
+            }
+            
+            else if(escolha == "4"){
+                break;
+            }
+
+            else{
+                alert("Escolha inválida!");
+            }
+        }
+
+        if(frutas.length > 0){
+            adicionaAlimento("FRUTAS:", frutas); 
+        }
+        if(laticinios.length > 0){
+            adicionaAlimento("LATICINIOS:", laticinios); 
+        }
+        if(congelados.length > 0){
+            adicionaAlimento("CONGELADOS:",congelados); 
+        }
+        if(doces.length > 0){
+            adicionaAlimento("DOCES:", doces);
+        }
+
+        function adicionaAlimento(nomeAlimento, arrayAlimento){
+            let catAlimento = document.createElement("li");
+            catAlimento.innerHTML = nomeAlimento;
+
+            let alimentoElements = document.createElement("ul");
+
+            arrayAlimento.forEach(myFunction);
+                
+            function myFunction(value){
+                let newAliment = document.createElement("li");
+                newAliment.innerHTML = value;
+
+                alimentoElements.appendChild(newAliment);
+
+            }
+
+            catAlimento.appendChild(alimentoElements);
+            listaDeCompras.appendChild(catAlimento);
+        }
+
+        function exibeAlimentos(arr){
+            let txt = "";
+            arr.forEach(value => value.forEach(v => txt += v + "\n"));
+            return(txt);
+            
+        }
+
+
+    </script>
+        
+    
+</body>
+</html>
