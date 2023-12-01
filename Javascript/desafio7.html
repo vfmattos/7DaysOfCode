@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 7</title>
+</head>
+<body>
+    
+    <script>
+
+        let operacao = '';
+
+        do{
+            operacao = prompt("Escolha a operação (soma, multiplicação, subtração, divisão, sair): ");
+
+            switch (operacao) {
+                case 'soma': soma(); break;
+                case 'multiplicação': multiplicacao(); break;
+                case 'subtração': subtracao(); break;
+                case 'divisão': divisao(); break;
+                case 'sair': break;
+                default: alert("Operação não reconhecida!");
+            }
+
+        }while(operacao !== 'sair');
+        
+        alert("Saindo...");
+
+        function soma(){
+            let num1 = prompt("Digite o primeiro numero: ");
+            let num2 = prompt("Digite o segundo numero: ");
+
+            let num1f = parseFloat(num1);
+            let num2f = parseFloat(num2);
+
+            let result = num1f + num2f;
+            alert(`Resultado: ${result}`);
+        }
+
+        function multiplicacao(){
+            let num1 = prompt("Digite o primeiro numero: ");
+            let num2 = prompt("Digite o segundo numero: ");
+
+            alert("Resultado: " + parseInt(num1 * num2));
+        }
+
+        function subtracao(){
+            let num1 = prompt("Digite o primeiro numero: ");
+            let num2 = prompt("Digite o segundo numero: ");
+
+            alert("Resultado: " + parseInt(num1 - num2));
+        }
+
+        function divisao(){
+            let num1 = prompt("Digite o primeiro numero: ");
+            let num2 = prompt("Digite o segundo numero: ");
+
+            alert("Resultado: " + parseInt(num1 / num2));
+        }
+
+    </script>
+</body>
+</html>
