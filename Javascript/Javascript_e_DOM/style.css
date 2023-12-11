@@ -39,21 +39,16 @@
     font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
 }
 
-#nome{
-    background-color:#eeeeee;
-   }
-   
-#data-nascimento{
-    transform:translatex(0px) translatey(0px);
-    background-color:#eeeeee;
-   }
 
-input[type="text"]{
+.infos{
     max-width: 40%;
+    background-color:#eeeeee;
     padding: 8px 25px;
     border: none;
     border-radius:5px
+
 }
+
 
 input[type="submit"]{
     max-width: 10%;
