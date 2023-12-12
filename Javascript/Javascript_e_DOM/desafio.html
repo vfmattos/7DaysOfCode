@@ -18,14 +18,14 @@
         <section class="formularios">
 
 
-            <form action="">
+            <form id="formulario">
                 
                 
                 <label for="nome">Nome da pessoa <span>(campo obrigatório)</span></label><br />
-                <input type="text" name="nome" class="infos" minlength="3" maxlength=”120” required pattern="[A-Za-z]+" title="Apenas letras são permitidas" placeholder="Digite o nome da pessoa aqui. Por exemplo: João ou Maria."><br/>
+                <input type="text" name="nome" id="nome" class="infos" minlength="3" maxlength=”120” required pattern="[A-Za-z]+" title="Apenas letras são permitidas" placeholder="Digite o nome da pessoa aqui. Por exemplo: João ou Maria."><br/>
                 <br>
                 <label for="data-nascimento">Data de nascimento <span>(campo obrigatório)</span></label><br/>
-                <input type="text" name="data-nascimento" class="infos" pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$" title="Informe uma data válida no formato DD/MM/AAAA" placeholder="Digite a data de nascimento aqui. Por exemplo: 28/01/2002"><br/>
+                <input type="text" name="data-nascimento" id="data" class="infos" pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$" title="Informe uma data válida no formato DD/MM/AAAA" placeholder="Digite a data de nascimento aqui. Por exemplo: 28/01/2002"><br/>
 
                 <input type="submit" value="Salvar">
 
@@ -34,9 +34,51 @@
         </section>
 
         <section class="agenda">
+
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
         </section>
 
     </div>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var nome = document.getElementById("nome").value;
+            var data = document.getElementById("data").value;
+
+            adicionarLinha(nome, data);
+
+        });
+
+        function adicionarLinha(nome, data){
+            var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
+
+            var novaLinha = document.createElement("tr");
+            var celulaNome = document.createElement("td");
+            var celulaData = document.createElement("td");
+
+            celulaNome.innerHTML = nome;
+            celulaData.innerHTML = data;
+
+            novaLinha.appendChild(celulaNome);
+            novaLinha.appendChild(celulaData);
+
+            tabela.appendChild(novaLinha);
+
+        }
+    </script>
     
 </body>
 </html>
