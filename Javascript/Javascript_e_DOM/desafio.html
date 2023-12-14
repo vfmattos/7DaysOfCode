@@ -52,6 +52,11 @@
     </div>
 
     <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadData();
+        })
+
         document.getElementById("formulario").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -59,6 +64,7 @@
             var data = document.getElementById("data").value;
 
             adicionarLinha(nome, data);
+            saveData();
 
         });
 
@@ -78,6 +84,29 @@
             tabela.appendChild(novaLinha);
 
         }
+
+        function loadData(){
+            var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
+            var dadosArmazenados = JSON.parse(localStorage.getItem("dados")) || [];
+
+            dadosArmazenados.forEach(dado => {
+                adicionarLinha(dado.nome, dado.data);
+            });
+        }
+
+        function saveData(){
+            var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
+            var dados = [];
+
+            for(var i = 0; i < tabela.rows.length; i++){
+                var nome = tabela.rows[i].cells[0].innerHTML;
+                var data = tabela.rows[i].cells[1].innerHTML;
+                dados.push({nome: nome, data: data});
+            }
+
+            localStorage.setItem("dados", JSON.stringify(dados));
+        }
+
     </script>
     
 </body>
