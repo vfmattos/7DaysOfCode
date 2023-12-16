@@ -1,3 +1,6 @@
+var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
+
+
 document.addEventListener("DOMContentLoaded", () => {
     loadData();
 })
@@ -14,7 +17,6 @@ document.getElementById("formulario").addEventListener("submit", function(event)
 });
 
 function adicionarLinha(nome, data){
-    var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
 
     var novaLinha = document.createElement("tr");
     var celulaNome = document.createElement("td");
@@ -34,7 +36,6 @@ function adicionarLinha(nome, data){
 }
 
 function loadData(){
-    var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
     var dadosArmazenados = JSON.parse(localStorage.getItem("dados")) || [];
 
     dadosArmazenados.forEach(dado => {
@@ -43,7 +44,6 @@ function loadData(){
 }
 
 function saveData(){
-    var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
     var dados = [];
 
     for(var i = 0; i < tabela.rows.length; i++){
@@ -70,7 +70,6 @@ function editarLinha(dados) {
 }
 
 function deletarLinha(dados){
-    var tabela = document.getElementById("tabela").getElementsByTagName("tbody")[0];
     var linha = dados.parentNode;
 
     tabela.removeChild(linha);
