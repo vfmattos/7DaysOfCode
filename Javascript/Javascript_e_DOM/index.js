@@ -25,7 +25,7 @@ function adicionarLinha(nome, data){
 
     celulaNome.innerHTML = nome;
     celulaData.innerHTML = data;
-    celulaAcao.innerHTML = "<button onclick=editarLinha(this.parentNode)>Editar</button><button onclick=deletarLinha(this.parentNode)>Deletar</button>";
+    celulaAcao.innerHTML = "<button onclick=editarLinha(this.parentNode) class=\"Editar\">Editar</button><button onclick=deletarLinha(this.parentNode) class=\"Apagar\">Deletar</button>";
 
     novaLinha.appendChild(celulaNome);
     novaLinha.appendChild(celulaData);

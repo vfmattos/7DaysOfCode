@@ -8,7 +8,7 @@
 
 .app{
     display: grid;
-    grid-template-rows: 100px 1fr 1fr;
+    grid-template-rows: 100px 1fr;
     gap:48px;
     width: 100%;
     max-width: 2560px;
@@ -56,6 +56,21 @@ input[type="submit"]{
     border-radius: 10px;
 }
 
+.Editar{
+    background-color: #0069D9;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.Apagar{
+    background-color: #DC3545;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+}
+
 #tabela, th, td{
     border: 2px solid #EEEEEE;
     border-collapse: collapse;
@@ -78,4 +93,18 @@ input[type="submit"]{
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+@media(max-width: 768px){
+
+    .infos{
+        max-width: 100%;
+        padding: 8px 25px;
+    
+    }
+
+    input[type="submit"]{
+        max-width: 100%;
+        
+    }
 }
